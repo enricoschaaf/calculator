@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url("Inter.latin.var.woff2") format("woff2");
+}

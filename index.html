@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <meta name="description" content="Calculator" />
+    <meta name="theme-color" content="#262626" />
+    <link rel="preload" href="styles.css" as="style" />
+    <link
+      rel="preload"
+      as="font"
+      href="Inter.latin.var.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <script src="main.js" defer></script>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+  <body class="h-screen bg-gray-800 text-gray-900 grid place-items-center">
+    <main class="rounded-xl shadow-lg overflow-hidden">
+      <div id="equation" class="bg-gray-900 text-white h-16 p-2 text-5xl"></div>
+      <div
+        id="calculator"
+        class="inline-grid grid-cols-4 gap-2 p-3 bg-gray-900"
+      >
+        <button
+          id="reset"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm bg-gray-300 hover:bg-gray-400 focus:bg-gray-400 focus:outline-none font-bold"
+        >
+          AC
+        </button>
+        <button
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm bg-gray-300 hover:bg-gray-400 focus:bg-gray-400 focus:outline-none font-bold"
+        >
+          +/-
+        </button>
+        <button
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm bg-gray-300 hover:bg-gray-400 focus:bg-gray-400 focus:outline-none font-bold"
+        >
+          %
+        </button>
+        <button
+          data-value="÷"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:outline-none font-bold"
+        >
+          ÷
+        </button>
+        <button
+          data-value="7"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          7
+        </button>
+        <button
+          data-value="8"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          8
+        </button>
+        <button
+          data-value="9"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          9
+        </button>
+        <button
+          data-value="×"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:outline-none font-bold"
+        >
+          ×
+        </button>
+        <button
+          data-value="4"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          4
+        </button>
+        <button
+          data-value="5"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          5
+        </button>
+        <button
+          data-value="6"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          6
+        </button>
+        <button
+          data-value="-"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:outline-none font-bold"
+        >
+          -
+        </button>
+        <button
+          data-value="1"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          1
+        </button>
+        <button
+          data-value="2"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          2
+        </button>
+        <button
+          data-value="3"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          3
+        </button>
+        <button
+          data-value="+"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:outline-none font-bold"
+        >
+          +
+        </button>
+        <button
+          data-value="0"
+          class="col-span-2 inline-flex items-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          <span class="pl-2">0</span>
+        </button>
+        <button
+          data-value="."
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none font-bold"
+        >
+          .
+        </button>
+        <button
+          id="equals"
+          class="inline-flex items-center justify-center p-3 rounded-full shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:outline-none font-bold"
+        >
+          =
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
