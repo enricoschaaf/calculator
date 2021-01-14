@@ -2,10 +2,10 @@
   "name": "calculator",
   "scripts": {
     "dev": "tailwindcss-cli build styles.css -o public/styles.css",
-    "build": "npm run build:files & npm run build:css & npm run build:js",
+    "build": "mkdir -p public && (npm run build:files & npm run build:css & npm run build:js)",
     "build:css": "NODE_ENV=production tailwindcss-cli build styles.css -o public/styles.css",
     "build:js": "esbuild main.js sw.js --minify --outdir=public",
-    "build:files": "mkdir -p public && cp 192x192.png 512x512.png apple-touch-icon.png favicon.svg index.html Inter.latin.var.woff2 manifest.webmanifest maskable.png public"
+    "build:files": "cp 192x192.png 512x512.png apple-touch-icon.png favicon.svg index.html Inter.latin.var.woff2 manifest.webmanifest maskable.png public"
   },
   "devDependencies": {
     "esbuild": "^0.8.31",
