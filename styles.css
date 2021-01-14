@@ -13,3 +13,11 @@
   font-display: optional;
   src: url("Inter.latin.var.woff2") format("woff2");
 }
+
+#equation {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

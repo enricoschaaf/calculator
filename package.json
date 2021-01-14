@@ -1,14 +1,22 @@
 {
   "name": "calculator",
   "scripts": {
-    "dev": "tailwindcss-cli build styles.css -o public/styles.css",
-    "build": "mkdir -p public && (npm run build:files & npm run build:css & npm run build:js)",
+    "start": "npm run watch:css & npm run watch:main & npm run watch:sw",
+    "watch:css": "watchexec -w styles.css npm run dev:css",
+    "watch:main": "watchexec -w main.js npm run dev:main",
+    "watch:sw": "watchexec -w main.js npm run dev:sw",
+    "dev:css": "tailwindcss-cli build styles.css -o public/styles.css",
+    "dev:main": "esbuild main.js --outdir=public",
+    "dev:sw": "esbuild sw.js --outdir=public",
+    "build": "npm run build:css & npm run build:js",
     "build:css": "NODE_ENV=production tailwindcss-cli build styles.css -o public/styles.css",
-    "build:js": "esbuild main.js sw.js --minify --outdir=public",
-    "build:files": "cp 192x192.png 512x512.png apple-touch-icon.png favicon.svg index.html Inter.latin.var.woff2 manifest.webmanifest maskable.png public"
+    "build:js": "esbuild main.js sw.js --minify --outdir=public"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "esbuild": "^0.8.31",
+    "install": "^0.13.0",
+    "npm": "^6.14.11",
     "tailwindcss": "^2.0.2",
     "tailwindcss-cli": "^0.1.2"
   }

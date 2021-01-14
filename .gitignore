@@ -1,3 +1,5 @@
 node_modules
-public
+public/syles.css
+public/main.js
+public/sw.js
 .vercel

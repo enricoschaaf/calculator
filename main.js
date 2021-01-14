@@ -9,7 +9,7 @@ if ("serviceWorker" in navigator) {
 getEquation() === null ? reset() : (eq.textContent = getEquation())
 
 document
-  .querySelectorAll("#calculator > button[data-value]")
+  .querySelectorAll("button[data-value]")
   .forEach((e) => e.addEventListener("click", () => input(e.dataset.value)))
 
 $("#equals").addEventListener("click", equals)
@@ -61,6 +61,7 @@ function input(value) {
   } else {
     eq.textContent += value
   }
+  eq.scrollLeft = eq.scrollWidth
   localStorage.setItem("equation", eq.textContent)
 }
 
